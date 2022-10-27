@@ -1,0 +1,60 @@
+#################################
+##  Configs for the Trainer    ##
+#################################
+trainer:
+  max_epochs: 400
+  save_top_k: 2
+  check_val_every_n_epoch: 10
+
+#################################
+##  Configs for the DataModule ##
+#################################
+data_module:
+  name: MSSRDataModule
+  args:
+    num_workers: 8
+    rgb_range: 1
+    train:
+      min_scale: 1
+      max_scale: 4
+      datapath: load/div2k/DIV2K_train_HR
+      data_repeat: 60
+      data_cache: memory
+      data_first_k: 122
+      lr_img_sz: 48
+      batch_size: 8
+    valid:
+      scales: [2, 3, 4]
+      data_path: load/benchmark/Set5/HR
+
+#######################################
+##  Configs for the LightningModule  ##
+#######################################
+lit_model:
+  name: MultiScaleSRModel
+  args:
+    rgb_range: 1
+    valid:
+      scales: [2, 3, 4]
+      self_ensemble: false
+      test_Y: false
+    network:
+      name: RDN_MS
+      args: 
+        which_uplayer : "UPLayer_MS_V9"
+        uplayer_ksize : 3
+        rgb_range : 1
+        rgb_mean : [0.5, 0.5, 0.5]
+        rgb_std : [1.0, 1.0, 1.0]
+        in_channels : 3
+        out_channels : 3
+        num_features : 64
+        num_blocks : 16
+        width_multiplier : 4
+        num_layers : 8
+        interpolate_mode : 'bilinear'
+        levels : 4
+    optimizer:
+      lr: 0.0001
+      lr_scheduler_milestones: [200, 400, 600, 800]
+      lr_scheduler_gamma: 0.5
