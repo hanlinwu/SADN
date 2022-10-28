@@ -1,6 +1,6 @@
 ## Learning Dynamic Scale Awareness and Global Implicit Functions for Continuous-Scale Super-Resolution of Remote Sensing Images
 
-by Hanlin Wu, Ning Ni, and Libao Zhang, details are in [paper](https://arxiv.org/abs/2210.07598).
+by Hanlin Wu, Ning Ni, and Libao Zhang, details are in [paper](https://arxiv.org/abs/2110.15655).
 
 ## Usage
 
