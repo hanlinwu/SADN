@@ -2,7 +2,7 @@ import argparse
 
 import torch
 from litsr.data import create_data_module
-from litsr.models import create_model, load_model
+from litsr.models import *
 from litsr.utils import read_yaml
 from pytorch_lightning import Trainer, loggers, seed_everything
 from pytorch_lightning.callbacks import ModelCheckpoint
@@ -55,6 +55,7 @@ def train_pipeline(args):
     if args.finetune:
         model = load_model(config, args.finetune, False)
     else:
+        print(config)
         model = create_model(config)
 
     datamodule = create_data_module(config.data_module)
