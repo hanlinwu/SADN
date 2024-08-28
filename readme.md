@@ -16,6 +16,10 @@ https://github.com/hanlinwu/SADN.git
 - easydict
 - tqdm
 
+## Pretrained checkpoints:
+1. Model pretrained on the DIV2k dataset: download from this [url](https://github.com/hanlinwu/SADN/releases/download/v1.0.0/sadn_div2k.zip)
+2. Model pretrained on the remote sensing dataset: download from this [url](https://github.com/hanlinwu/SADN/releases/download/v1.0.0/sadn_rs.zip)
+
 ### Train:
 
 1. Download training datset from this [url](https://data.vision.ee.ethz.ch/cvl/DIV2K/).
