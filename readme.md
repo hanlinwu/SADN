@@ -18,7 +18,9 @@ https://github.com/hanlinwu/SADN.git
 
 ## Pretrained checkpoints:
 1. Model pretrained on the DIV2k dataset: download from this [url](https://github.com/hanlinwu/SADN/releases/download/v1.0.0/sadn_div2k.zip)
-2. Model pretrained on the remote sensing dataset: download from this [url](https://github.com/hanlinwu/SADN/releases/download/v1.0.0/sadn_rs.zip)
+   
+   **Note: For natural image data test sets such as Set14, B100, etc., to obtain results consistent with those in the paper, please set the `test_Y` attribute in line 82 of test.py to `True`.**
+3. Model pretrained on the remote sensing dataset: download from this [url](https://github.com/hanlinwu/SADN/releases/download/v1.0.0/sadn_rs.zip)
 
 ### Train:
 
